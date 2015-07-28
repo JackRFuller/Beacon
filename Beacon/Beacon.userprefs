@@ -1,0 +1,14 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Enemies/Skeleton/SkeletonBehaviour.cs">
+    <Files>
+      <File FileName="Assets/Scripts/Player/Shoot.cs" Line="27" Column="26" />
+      <File FileName="Assets/Scripts/Enemies/EnemyBaseClass.cs" Line="8" Column="8" />
+      <File FileName="Assets/Scripts/Enemies/Skeleton/SkeletonBehaviour.cs" Line="45" Column="23" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
