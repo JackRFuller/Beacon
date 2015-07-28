@@ -1,7 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class EnemyBaseClass : MonoBehaviour {
+
+	public GameObject PC;
 
 	[Header("Enemy Navigation Attributes")]
 	public Transform Target;
@@ -11,5 +14,9 @@ public class EnemyBaseClass : MonoBehaviour {
 	public Rigidbody RB;
 	public float MovementSpeed;
 	public float  Health;
+
+	[Header("UI Elements")]
+	public GameObject Main_UI;
+	public Image HealthBar;
 
 }

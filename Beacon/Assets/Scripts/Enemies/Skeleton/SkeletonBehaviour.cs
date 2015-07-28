@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class SkeletonBehaviour : EnemyBaseClass {
 
@@ -25,6 +26,8 @@ public class SkeletonBehaviour : EnemyBaseClass {
 		{
 			NVM_Agent.SetDestination(Target.position);
 		}
+
+		Main_UI.transform.LookAt(PC.transform.position);
 
 
 	
