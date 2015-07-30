@@ -1,8 +1,13 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="../../../../Desktop/Endless Driver/Assets/LevelManager.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Enemies/EnemyBaseClass.cs">
     <Files>
-      <File FileName="../../../../Desktop/Endless Driver/Assets/LevelManager.cs" Line="14" Column="1" />
+      <File FileName="Assets/Scripts/Misc/Screenshot.cs" Line="21" Column="54" />
+      <File FileName="Assets/Scripts/Player/Shoot.cs" Line="66" Column="27" />
+      <File FileName="Assets/Scripts/Weapons/GunClass.cs" Line="32" Column="31" />
+      <File FileName="Assets/Scripts/Forcefield/ReverseNormals.cs" Line="31" Column="2" />
+      <File FileName="Assets/Scripts/Enemies/Robots/StandardRobotBehaviour.cs" Line="26" Column="45" />
+      <File FileName="Assets/Scripts/Enemies/EnemyBaseClass.cs" Line="24" Column="37" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

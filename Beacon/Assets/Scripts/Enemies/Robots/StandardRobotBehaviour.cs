@@ -22,11 +22,8 @@ public class StandardRobotBehaviour : EnemyBaseClass {
 	// Update is called once per frame
 	void Update () {
 
-		if(!Launched)
-		{
-			//NVM_Agent.SetDestination(Target.position);
-		}
 
+		NVM_Agent.SetDestination(Target.position);
 		Main_UI.transform.LookAt(PC.transform.position);
 	}
 

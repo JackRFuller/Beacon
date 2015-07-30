@@ -29,6 +29,8 @@ public class Shoot : GunClass {
 	// Use this for initialization
 	void Start () {
 
+		PS_Gun.enableEmission = false;
+
 		InitiliseAmmo();
 
 		CurrentGunMode = GunMode.Standard;	
@@ -39,22 +41,65 @@ public class Shoot : GunClass {
 	// Update is called once per frame
 	void Update () {
 
-		if(Input.GetMouseButton(0))
-		{
-			Cursor.lockState = CursorLockMode.Locked;
-			Cursor.visible = false;
+		ControlEffects();	
 
-			if(CurrentGunMode == GunMode.Standard)
-			{
-				CalculateAccuracy();
-			}
-		}
+
+
+
+
+
+	
+	}
+
+	void ControlEffects(){
 
 		if(Input.GetMouseButtonUp(0))
 		{
 			CanShoot = true;
+			PS_Gun.enableEmission = false;
+			GunAnimations.SetBool("Shooting", false);
 		}
-	
+
+		if(Input.GetMouseButton(0))
+		{
+			Cursor.lockState = CursorLockMode.Locked;
+			Cursor.visible = false;
+			
+			if(CurrentGunMode == GunMode.Standard)
+			{
+				CalculateAccuracy();
+
+			}
+		}
+
+		if(Input.GetMouseButton(1))
+		{
+			GunAnimations.SetBool("Aiming", true);
+			float FieldofView = 60;
+
+			FieldofView = Mathf.Lerp(60,35, 1);
+
+			Camera.main.fieldOfView = FieldofView;
+		}
+		
+		if(Input.GetMouseButtonUp(1))
+		{
+			GunAnimations.SetBool("Aiming", false);
+
+			float FieldofView = 35;
+			FieldofView = Mathf.Lerp(35,60, 1);			
+			Camera.main.fieldOfView = FieldofView;
+		}
+
+		if(Input.GetKeyUp("r"))
+		{
+			if(CurrentClipSize < MaxClipSize)
+			{
+				int ClipDifference = MaxClipSize - CurrentClipSize;
+				Reload(ClipDifference);
+			}
+
+		}
 	}
 
 	void CalculateAccuracy()
@@ -66,7 +111,6 @@ public class Shoot : GunClass {
 		if(Input.GetMouseButton(1))
 		{
 			Accuracy = Random.Range(Zoomed_In_Weapon_Accuracy[0],Zoomed_In_Weapon_Accuracy[1]);
-			Debug.Log("Hit");
 		}
 		else
 		{
@@ -84,13 +128,18 @@ public class Shoot : GunClass {
 			Ray ray = Camera.main.ViewportPointToRay(new Vector3(Accuracy,Accuracy,0));
 			Debug.DrawRay(ray.origin,ray.direction * Weapon_Range, Color.red,0.1F);
 			RaycastHit hit;
+			PS_Gun.enableEmission = true;
 
 			CurrentClipSize--;
 			UpdateTubeGlass();
+
+			GunAnimations.SetBool("Shooting", true);
+
 			AmmoUIUpdate();
 			if(CurrentClipSize == 0)
 			{
-				Reload();
+				int ClipDifference = MaxClipSize - CurrentClipSize;
+				Reload(ClipDifference);
 			}
 			
 			if(Physics.Raycast(ray, out hit, Weapon_Range))
@@ -109,17 +158,16 @@ public class Shoot : GunClass {
 			}
 
 			CooldownTime = Time.realtimeSinceStartup + Weapon_Cooldown;
-
 			GunModifiers();
 
 		}
 	}
 
-	void Reload()
+	void Reload(int ClipDifference)
 	{
 		if(CurrentAmmo > 1)
 		{
-			for(int i = 0; i < MaxClipSize; i++)
+			for(int i = 0; i < ClipDifference; i++)
 			{
 				CurrentClipSize++;
 				CurrentAmmo--;

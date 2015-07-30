@@ -24,14 +24,19 @@ public class GunClass : MonoBehaviour {
 	public Text CurrentAmmoText;
 
 	[Header("Gun Attributes")]
+	public Animator GunAnimations;
 	public Material Gun_TubeGlass;
 	public float Emission = 0.1F;
-	public Renderer Rend;
+
+	[Header("Particle System")]
+	public ParticleSystem PS_Gun;
 
 	// Use this for initialization
 	void Start () {
 	
 	}
+
+
 
 	public void UpdateTubeGlass()
 	{
