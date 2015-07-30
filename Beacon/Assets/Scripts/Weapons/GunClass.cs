@@ -24,8 +24,10 @@ public class GunClass : MonoBehaviour {
 	public Text CurrentAmmoText;
 
 	[Header("Gun Attributes")]
+	public Renderer Gun;
 	public Animator GunAnimations;
 	public Material Gun_TubeGlass;
+	public Color GunColor;
 	public float Emission = 0.1F;
 
 	[Header("Particle System")]
@@ -41,11 +43,10 @@ public class GunClass : MonoBehaviour {
 	public void UpdateTubeGlass()
 	{
 
-//		Color NewColor = Gun_TubeGlass.GetColor("_EmissionColor");
-//		Rend.materials[3].EnableKeyword("_EMISSION");
-//		Rend.materials[3].SetColor("_EmissionColor",NewColor * Emission);
-//		DynamicGI.UpdateMaterials(Rend);
-//		DynamicGI.UpdateEnvironment();
+		float intensity = 5.0f;
+		Gun_TubeGlass.EnableKeyword ("_EMISSION");
+		Gun_TubeGlass.SetColor("_EmissionColor", new Color(0.0f,0.7f,1.0f,1.0f) * intensity);
+
 
 	}
 
