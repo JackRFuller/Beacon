@@ -1,14 +1,10 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Misc/TestNavMesh.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Player/Shoot.cs">
     <Files>
-      <File FileName="Assets/Scripts/Misc/TestNavMesh.cs" Line="20" Column="39" />
-      <File FileName="Assets/Scripts/Misc/Screenshot.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Player/Shoot.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Weapons/GunClass.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Forcefield/ReverseNormals.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Enemies/Robots/StandardRobotBehaviour.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Enemies/EnemyBaseClass.cs" Line="24" Column="37" />
+      <File FileName="Assets/Scripts/Camera/GunCamera.cs" Line="17" Column="46" />
+      <File FileName="Assets/Scripts/Player/Shoot.cs" Line="32" Column="3" />
+      <File FileName="Assets/Scripts/Weapons/GunClass.cs" Line="45" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

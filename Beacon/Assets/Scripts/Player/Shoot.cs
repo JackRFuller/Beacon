@@ -29,7 +29,7 @@ public class Shoot : GunClass {
 	// Use this for initialization
 	void Start () {
 
-		PS_Gun.enableEmission = false;
+
 
 		InitiliseAmmo();
 
@@ -48,6 +48,7 @@ public class Shoot : GunClass {
 
 
 
+
 	
 	}
 
@@ -56,8 +57,6 @@ public class Shoot : GunClass {
 		if(Input.GetMouseButtonUp(0))
 		{
 			CanShoot = true;
-			PS_Gun.enableEmission = false;
-			GunAnimations.SetBool("Shooting", false);
 		}
 
 		if(Input.GetMouseButton(0))
@@ -74,18 +73,14 @@ public class Shoot : GunClass {
 
 		if(Input.GetMouseButton(1))
 		{
-			GunAnimations.SetBool("Aiming", true);
 			float FieldofView = 60;
 
 			FieldofView = Mathf.Lerp(60,35, 1);
-
 			Camera.main.fieldOfView = FieldofView;
 		}
 		
 		if(Input.GetMouseButtonUp(1))
 		{
-			GunAnimations.SetBool("Aiming", false);
-
 			float FieldofView = 35;
 			FieldofView = Mathf.Lerp(35,60, 1);			
 			Camera.main.fieldOfView = FieldofView;
@@ -128,12 +123,10 @@ public class Shoot : GunClass {
 			Ray ray = Camera.main.ViewportPointToRay(new Vector3(Accuracy,Accuracy,0));
 			Debug.DrawRay(ray.origin,ray.direction * Weapon_Range, Color.red,0.1F);
 			RaycastHit hit;
-			PS_Gun.enableEmission = true;
 
 			CurrentClipSize--;
 			UpdateTubeGlass();
 
-			GunAnimations.SetBool("Shooting", true);
 
 			AmmoUIUpdate();
 			if(CurrentClipSize == 0)

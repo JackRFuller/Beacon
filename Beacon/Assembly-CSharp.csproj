@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Camera\GunCamera.cs" />
      <Compile Include="Assets\Scripts\Enemies\EnemyBaseClass.cs" />
      <Compile Include="Assets\Scripts\Enemies\Robots\StandardRobotBehaviour.cs" />
      <Compile Include="Assets\Scripts\Forcefield\ReverseNormals.cs" />

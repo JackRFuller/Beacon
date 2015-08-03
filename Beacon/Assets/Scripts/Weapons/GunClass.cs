@@ -33,10 +33,16 @@ public class GunClass : MonoBehaviour {
 	[Header("Particle System")]
 	public ParticleSystem PS_Gun;
 
+	[Header("Cameras")]
+	public Camera SecondaryCamera;
+
 	// Use this for initialization
 	void Start () {
+
+
 	
 	}
+
 
 
 
